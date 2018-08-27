@@ -5,11 +5,15 @@ before_script:
   - npm install
 script:
   - npm run build
+cache:
+  directories:
+  - node_modules
 deploy:
   provider: pages
   skip-cleanup: true
   github-token: $GITHUB_TOKEN
   verbose: true
+  target-branch: deploy
   local_dir: dist
   on:
     branch: master
