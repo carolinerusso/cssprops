@@ -24,6 +24,7 @@ $block: 'list-item';
 		display: none;
 		padding: map-get($space, sm) map-get($space, md);
 		padding-bottom: map-get($space, default);
+		margin: 0;
 	}
 
 	&.active {
