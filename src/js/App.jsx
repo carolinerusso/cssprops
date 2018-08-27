@@ -84,7 +84,7 @@ class App extends Component {
 				<div className="app__header">
 					<h1 className="app__title">CSS Props</h1>
 					<p className="app__description">A filterable list of all CSS properties, with link references to their relevant specs.</p> 
-					<p className="app__byline">Data from <a href="https://www.w3.org/Style/CSS/all-properties" target="_blank">W3C</a>, with help from <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-create-api-step-by-step.html" target="_blank">AWS API Gateway</a>, React, and Webpack. <a href="https://github.com/carolinerusso" target="_blank">View source <span role="img" aria-label="woman technologist">👩‍💻</span></a>.</p>
+					<p className="app__byline">Data from <a href="https://www.w3.org/Style/CSS/all-properties" target="_blank">W3C</a>, with help from <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-create-api-step-by-step.html" target="_blank">AWS API Gateway</a>, React, and Webpack. View <a href="https://github.com/carolinerusso/cssprops" target="_blank">source</a> <span role="img" aria-label="woman technologist">👩‍💻</span>.</p>
 				</div>
 				{this.state.fetching == false ? (
 					<div className="app__content">
