@@ -3,17 +3,16 @@ node_js:
   - "6.11.5"
 
 install:
-  - npm i -g yarn && yarn install
+  - npm install
 
 script:
-  - yarn build
+  - npm run build
 
 deploy:
   provider: pages
   skip-cleanup: true
   github-token: $GITHUB_TOKEN
   keep-history: true
-  target-branch: master
   verbose: true
   on:
     branch: master
