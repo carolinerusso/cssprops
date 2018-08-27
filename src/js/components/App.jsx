@@ -4,21 +4,9 @@ import {Input} from './Form/Input.jsx';
 import {Loading} from './Util/Loading.jsx';
 import {Message} from './Util/Message.jsx';
 import {Byline} from './Util/Byline.jsx';
-
-const ENDPOINT = 'https://ibxtm1ckej.execute-api.us-east-2.amazonaws.com/prod';
-const STATUS_KEY = {
-	"ED": "Editors' Draft",
-	"FPWD": "First Public Working Draft",
-	"WD": "Working Draft",
-	"LC": "Last Call Working Draft",
-	"CR": "Candidate Recommendation",
-	"PR": "Proposed Recommendation",
-	"REC": "Recommendation",
-	"NOTE": "Working Group Note"
-}
+import * as Constant from './../global/Constants'
 
 class App extends Component {
-
 	constructor(props){
 		super(props);
 
@@ -44,7 +32,7 @@ class App extends Component {
 
 			//set state callback
 			//perform the fetch and store the results in state
-			fetch(ENDPOINT)
+			fetch(Constant.Endpoint)
 				.then((response) => {
 					if (!response.ok) {
 						throw Error(response.statusText);
