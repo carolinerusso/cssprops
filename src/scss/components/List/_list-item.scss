@@ -42,11 +42,11 @@ $block: 'list-item';
 }
 
 .spec {
-
 	> a {
 		display: flex;
 		justify-content: space-between;
 		font-size: map-get($font-size, sm);
+		padding: map-get($space, sm);
 		&:hover {
 			background: none;
 		}
@@ -54,13 +54,14 @@ $block: 'list-item';
 
 	//loop over all the status colors, pulled from w3
 	@each $w3-status, $w3-color in $w3-colors {
+		
 		&--#{$w3-status} {
-			background: $w3-color;
-			padding: map-get($space, sm);
-			&:hover {
-				background: darken($w3-color, 5%);
+			> a {
+				background: $w3-color;
+				&:hover {
+					background: darken($w3-color, 5%);
+				}
 			}
-
 		}
 	}
 }

@@ -12,7 +12,6 @@ $block: 'input';
 	width: calc(100% - #{map-get($space, md)} * 2);
 	margin: map-get($space, default) auto;
 	box-sizing: border-box;
-	vertical-align: middle;
 	appearance: none;
 	box-shadow: none;
 	&:focus {

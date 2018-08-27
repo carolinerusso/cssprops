@@ -9,8 +9,8 @@ $block: 'byline';
 	&__trigger {
 		font-size: map-get($font-size, md);
 		cursor: pointer;
-		line-height: 60px;
 		display: inline-block;
+		line-height: 60px;
 		&:after {
 			content: "\01F469\0200D\01F4BB";
 			text-align: center;
@@ -28,7 +28,7 @@ $block: 'byline';
 		margin: auto;
 		font-size: map-get($font-size, sm);
 		a {
-			border-bottom: 1px dotted mediumpurple;
+			border-bottom: 1px dotted gray;
 			&:hover {
 				border-bottom-color: thistle;
 			}

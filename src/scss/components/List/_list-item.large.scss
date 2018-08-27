@@ -4,11 +4,6 @@ $block: 'list-item';
 	&__title {
 		font-size: map-get($font-size, md);
 		padding: map-get($space, md);
-		&:after {
-			height: 24px;
-			width: 30px;
-			background-size: 30px 30px;
-		}
 	}
 }
 

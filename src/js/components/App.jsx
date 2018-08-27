@@ -6,6 +6,16 @@ import {Message} from './Util/Message.jsx';
 import {Byline} from './Util/Byline.jsx';
 
 const ENDPOINT = 'https://ibxtm1ckej.execute-api.us-east-2.amazonaws.com/prod';
+const STATUS_KEY = {
+	"ED": "Editors' Draft",
+	"FPWD": "First Public Working Draft",
+	"WD": "Working Draft",
+	"LC": "Last Call Working Draft",
+	"CR": "Candidate Recommendation",
+	"PR": "Proposed Recommendation",
+	"REC": "Recommendation",
+	"NOTE": "Working Group Note"
+}
 
 class App extends Component {
 
@@ -13,7 +23,7 @@ class App extends Component {
 		super(props);
 
 		this.state = {
-			
+			filters: []
 		}
 
 		this.doFetch = this.doFetch.bind(this);
@@ -79,19 +89,19 @@ class App extends Component {
 		});
 	}
 
-	updateResults(value){
+	updateResults(value, key, searchInput){
 		//TODO - make this toggle-able? 
 		//filter out the results based on the value on change
 		let filtered;
 
 		value = value.toLowerCase();
-
-		if (this.state.data.some(e => e.property === value)) {
+	
+		if (this.state.data.some(e => e[key] === value)) {
 			//if the value is an exact match, like "flex", only return "flex"
-			filtered = this.state.data.filter(i => i.property == value);
+			filtered = this.state.data.filter(i => i[key] == value);
 		} else {
 			//if there's no exact match, show everything that contains the word "flex"
-			filtered = this.state.data.filter(i => i.property.includes(value));
+			filtered = this.state.data.filter(i => i[key].includes(value));
 		}
 
 		//update the state of the filtered data results
@@ -104,15 +114,15 @@ class App extends Component {
 			<div className="app" key={1}>
 				<div className="app__header">
 					<h1 className="app__title">CSS Props</h1>
-					<p className="app__description">A filterable list of all {this.state.count} CSS properties, with link references to their relevant specs.</p>
+					<p className="app__description">A filterable list of {this.state.count} CSS properties, with link references to their relevant specs.</p>
 				</div>
 				{this.state.fetching == false ? (
 					<div className="app__content">
 						{ this.state.error ? (
 							<Message title="Woops" message={this.state.error} />
 						) : ([
-					    	<Input placeholder="Filter by property, e.g., border" handleInputValue={this.updateResults} key={0} />,
-							<List data={this.state.filtered} key={1} />	
+					    	<Input placeholder="Filter by property, e.g., border" handleInputValue={this.updateResults} key={1} />,
+							<List data={this.state.filtered} key={2} />	
 						])}
 					</div>
 				) : (

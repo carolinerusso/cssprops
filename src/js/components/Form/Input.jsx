@@ -18,7 +18,7 @@ export class Input extends Component {
 		}, () => { 
 
 			//pass the state upstream
-			this.props.handleInputValue(this.state.value);
+			this.props.handleInputValue(this.state.value, 'property');
 		});
 	}
 

@@ -2,5 +2,4 @@ $block: 'input';
 
 .#{$block} {
 	width: 100%;
-	font-size: map-get($font-size, md);
 }
