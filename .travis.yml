@@ -3,7 +3,7 @@ node_js:
   - "6.11.5"
 install:
   - npm i -g yarn && yarn install
-before_script:
+script:
   - yarn build
 deploy:
   provider: pages
