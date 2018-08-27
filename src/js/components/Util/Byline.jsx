@@ -6,7 +6,7 @@ export class Byline extends Component {
 		super(props);
 
 		this.state = {
-			open: false
+			open: true
 		}
 
 		this.toggleClick = this.toggleClick.bind(this);

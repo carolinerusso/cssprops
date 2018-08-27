@@ -23,7 +23,7 @@ class App extends Component {
 		super(props);
 
 		this.state = {
-			filters: []
+		
 		}
 
 		this.doFetch = this.doFetch.bind(this);
