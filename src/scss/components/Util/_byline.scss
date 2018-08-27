@@ -9,16 +9,9 @@ $block: 'byline';
 	&__trigger {
 		font-size: map-get($font-size, md);
 		cursor: pointer;
-		text-align: center;
 		line-height: 60px;
 		display: inline-block;
-		position: relative;
 		&:after {
-			width: 40px;
-			height: 40px;
-			border-radius: 40px;
-			line-height: 40px;
-			display: inline-block;
 			content: "\01F469\0200D\01F4BB";
 			text-align: center;
 		}

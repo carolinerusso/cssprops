@@ -10,10 +10,6 @@ $block: 'list-item';
 			background-size: 30px 30px;
 		}
 	}
-
-	&__content {
-		padding: map-get($space, md);
-	}
 }
 
 .spec {

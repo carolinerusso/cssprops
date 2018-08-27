@@ -44,11 +44,30 @@ class App extends Component {
 				.then(json => {
 					let data = json;
 
+					//create object of objects, key = property name
+					//push each instance of property name into array
+					let groupedby = data.reduce(function (obj, item) {
+					    obj[item.property] = obj[item.property] || [];
+					    obj[item.property].push({
+					    	status: item.status,
+					    	url: item.url,
+					    	title: item.title
+					    });
+					    return obj;
+					}, {});
+
+					//map obj to array of objects
+					data = Object.keys(groupedby).map(property => ({
+					  property: property,
+					  specs: groupedby[property]
+					}));
+
 					this.setState({
 						fetching: false,
 						error: undefined,
 						data: data,
-						filtered: data
+						filtered: data,
+						count: data.length
 					});
 				})
 				.catch(error => {				
@@ -81,11 +100,11 @@ class App extends Component {
 
 	render(){
 		return ([
-			<Byline />,
-			<div className="app">
+			<Byline key={0} />,
+			<div className="app" key={1}>
 				<div className="app__header">
 					<h1 className="app__title">CSS Props</h1>
-					<p className="app__description">A filterable list of all CSS properties, with link references to their relevant specs.</p>
+					<p className="app__description">A filterable list of all {this.state.count} CSS properties, with link references to their relevant specs.</p>
 				</div>
 				{this.state.fetching == false ? (
 					<div className="app__content">

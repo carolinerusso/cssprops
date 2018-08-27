@@ -7,7 +7,7 @@ $block: 'list-item';
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		padding: map-get($space, md) map-get($space, default);
+		padding: map-get($space, sm) map-get($space, md);
 		&:hover {
 			background: lavender;
 		}
@@ -22,9 +22,7 @@ $block: 'list-item';
 
 	&__content {
 		display: none;
-		padding: map-get($space, sm) map-get($space, md);
-		padding-bottom: map-get($space, default);
-		margin: 0;
+		border: 5px solid lavender;
 	}
 
 	&.active {
