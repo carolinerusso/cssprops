@@ -27,8 +27,10 @@ export class ListItem extends Component {
 				<ul className="list-item__content">
 				{this.props.specs.map((i, index) => 
 					<li className={`spec spec--${i.status.toLowerCase()}`} key={index.toString()}>
-						<p className="spec__title"><a href={i.url} target="_blank">{i.title}</a></p>
-						<p className="spec__status">{i.status}</p>
+						<a href={i.url} target="_blank">
+							<p className="spec__title">{i.title}</p>
+							<p className="spec__status">{i.status}</p>
+						</a>
 					</li>
 				)}
 				</ul>

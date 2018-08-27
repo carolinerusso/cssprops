@@ -1,0 +1,23 @@
+$block: 'list-item';
+
+.#{$block} {
+	&__title {
+		font-size: map-get($font-size, md);
+		padding: map-get($space, md);
+		&:after {
+			height: 24px;
+			width: 30px;
+			background-size: 30px 30px;
+		}
+	}
+
+	&__content {
+		padding: map-get($space, md);
+	}
+}
+
+.spec {
+	> a {
+		font-size: map-get($font-size, default);
+	}
+}

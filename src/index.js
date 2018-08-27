@@ -5,5 +5,5 @@ import App from './js/App.jsx';
 
 ReactDOM.render(
 	<App />, 
-	document.querySelector('.app')
+	document.querySelector('.wrapper')
 );

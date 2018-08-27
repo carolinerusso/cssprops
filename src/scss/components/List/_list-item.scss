@@ -2,26 +2,27 @@ $block: 'list-item';
 
 .#{$block} {
 	&__title {
-		font-size: map-get($font-size, md);
+		font-size: map-get($font-size, default);
 		cursor: pointer;
 		display: flex;
 		justify-content: space-between;
-		padding: map-get($space, md);
+		align-items: center;
+		padding: map-get($space, md) map-get($space, default);
 		&:hover {
 			background: lavender;
 		}
 		&:after {
 			content: "";
-			height: 24px;
-			width: 30px;
-			background-size: 30px 30px;
+			height: 16px;
+			width: 20px;
+			background-size: 20px 20px;
 			background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' data-name='Layer 1' viewBox='0 0 96 120' x='0px' y='0px'%3E%3Cpath d='M45.17,64.83a4,4,0,0,0,5.66,0l29-29a4,4,0,0,0-5.66-5.66L48,56.34,21.83,30.17a4,4,0,1,0-5.66,5.66Z'/%3E%3C/svg%3E");
 		}
 	}
 
 	&__content {
 		display: none;
-		padding: map-get($space, md);
+		padding: map-get($space, sm) map-get($space, md);
 		padding-bottom: map-get($space, default);
 	}
 
@@ -42,16 +43,16 @@ $block: 'list-item';
 }
 
 .spec {
-	display: flex;
-	justify-content: space-between;
-	padding: map-get($space, sm) 0;
 
-	a {
+	> a {
+		display: flex;
+		justify-content: space-between;
+		font-size: map-get($font-size, sm);
 		&:hover {
 			background: none;
 		}
 	}
-	
+
 	//loop over all the status colors, pulled from w3
 	@each $w3-status, $w3-color in $w3-colors {
 		&--#{$w3-status} {

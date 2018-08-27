@@ -14,8 +14,7 @@ $block: 'app';
 		text-align: center;
 		margin: auto;
 		padding: 0 map-get($space, default);
-		margin-bottom: map-get($space, lg);
-		
+		margin-bottom: map-get($space, default);
 		a {
 			border-bottom: 3px solid lavender;
 		}

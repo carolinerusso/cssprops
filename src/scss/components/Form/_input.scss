@@ -3,18 +3,20 @@ $block: 'input';
 .#{$block} {
 	font-family: $font-base;
 	padding: map-get($space, md);
-	font-size: map-get($font-size, md);
+	font-size: map-get($font-size, default);
 	display: block;
 	border: 1px solid lavender;
 	border-radius: $border-radius;
 	height: map-get($font-size, default) * 3;
 	line-height: map-get($font-size, default) * 3;
-	width: calc(100% - #{map-get($space, default)} * 2);
+	width: calc(100% - #{map-get($space, md)} * 2);
 	margin: map-get($space, default) auto;
 	box-sizing: border-box;
 	vertical-align: middle;
+	appearance: none;
+	box-shadow: none;
 	&:focus {
 		outline: 0;
-		border-color: gray;
+		border-color: thistle;
 	}
 }

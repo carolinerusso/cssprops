@@ -1,9 +1,10 @@
-@import url('https://fonts.googleapis.com/css?family=Nunito:200,300,400,600,700,800,900|Rubik:300,400,500,700,900|Titillium+Web:200,300,400,600,700,900');
+@import url('https://fonts.googleapis.com/css?family=Rubik:300,400,700');
 
 $font-base: 'Rubik', sans-serif;
+$font-weight-light: 300;
 $font-weight-normal: 400;
 $font-weight-bold: 700;
-$font-weight-light: 300;
+
 $line-height-normal: 1.6;
 
 $max-width-small: 420px;
@@ -43,28 +44,6 @@ $font-size: (
 	xl: 33px
 );
 
-$color-primary: #d2588e;
-$color-secondary: #2e66a8;
 $color-text: #333;
 $color-black: $color-text;
 $color-white: #fff;
-$color-cloudy: #d9d9d9;
-$color-sunny: #fee268;
-$color-rainy: #62c6dd;
-$color-cloudy-dark: darken($color-cloudy, 20%);
-$color-cloudy-light: lighten($color-cloudy, 8%);
-
-$weather-colors: (
-	thunderstorm: $color-cloudy,
-	hail: $color-cloudy,
-	partly-cloudy-night: $color-cloudy,
-	partly-cloudy-day: $color-cloudy,
-	cloudy: $color-cloudy,
-	fog: $color-cloudy,
-	snow: $color-cloudy,
-	sleet: $color-rainy,
-	rain: $color-rainy,
-	clear-night: $color-sunny,
-	clear-day: $color-sunny,
-	wind: $color-cloudy
-);
