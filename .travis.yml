@@ -1,16 +1,17 @@
 language: node_js
 node_js:
   - "6.11.5"
+
 install:
   - npm i -g yarn && yarn install
-script:
+
+before_script:
   - yarn build
+
 deploy:
   provider: pages
   skip-cleanup: true
+  github-token: $GITHUB_TOKEN
   keep-history: true
   on:
     branch: master
-env:
-  global:
-    secure: Yb1S31Ev0b+JYckQRdD6VKHp9Ob33ez1qw1uDVjeoY2PVJWyLZO41jo7UZ80vBGGiGB8772jv2bHVnjC+7fIdntd/L2Hs3mLP04VZ71EGTEb7mTZ8cPJQEPLra0iacVnP2PJu1HCKCqiLSUfTjWlzdnGbHND9XlByevc4hNaFwuI7YCD6N6/hFqC/WX6S0mbQTdw7xjuN/ljgYWRPo0D0jkOwx2KRdQLFZQmMEjtrvuChEAr4txwePbq645X/q5cIkE8htIR8EpQ0GUz+exJrRZRUWRGZAhBF9l8+DwUJkWefuSH2sonVbP/h8FkLExvcmExKpZ9q/51UTH4z5gvtb2lSb1ODrL6qdjN6VIq0v1TBXLvhr/yfZrS6rzZcRA2foxOq6sDzkw2ofn/2ciLUYGVKuQqEN6qv2IrQSJnXxap9VolEai0yVqn2tvSXXAJXS/4EPCD096VJ0RdFe1BN6BZlIjrYD0v1dWg2uZ+ZIQEDkgc8kAFQ0LGEHt3KVKnB+/E42jc8xf55KoQv8v/IOmHx3/VwQO0l86sEEp110uxHfOQ4JJhh627+AhfhBnhZUIcJ8Z928VvVg2Bw9WJwF5IxFjWidE/3WuTmQbW5aI2+pTLkgDT/BAamSnZjv7Y57L3SscJwhD6ULfD+3SPrZdYj34BBWT+5BVzfjcqFXY=
