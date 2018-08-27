@@ -14,5 +14,6 @@ deploy:
   github-token: $GITHUB_TOKEN
   verbose: true
   local_dir: dist
+  fqdn: cssprops.com
   on:
     branch: master
