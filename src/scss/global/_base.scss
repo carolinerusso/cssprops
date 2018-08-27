@@ -1,0 +1,21 @@
+html,
+body {
+	background: ghostwhite;
+}
+
+body {
+	font-family: $font-base;
+	font-size: map-get($font-size, default);
+	font-weight: $font-weight-normal;
+	line-height: $line-height-normal;
+	color: $color-text;
+	box-sizing: border-box;
+}
+
+a {
+	color: $color-black;
+	text-decoration: none;
+	&:hover {
+		background: lavender;
+	}
+}

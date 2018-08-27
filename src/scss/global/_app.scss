@@ -1,0 +1,28 @@
+$block: 'app';
+
+.#{$block} {
+	max-width: $max-width;
+	margin: auto;
+	margin-bottom: map-get($space, default);
+
+	&__byline {
+		font-size: map-get($font-size, sm);
+		margin-top: map-get($space, default);
+	}
+
+	&__header {
+		text-align: center;
+		margin: auto;
+		padding: 0 map-get($space, default);
+		margin-bottom: map-get($space, lg);
+		
+		a {
+			border-bottom: 3px solid lavender;
+		}
+	}
+
+	&__title {
+		font-size: map-get($font-size, xl);
+		margin: map-get($space, default);
+	}
+}

@@ -1,0 +1,5 @@
+$block: 'message';
+
+.#{$block} {
+	padding: map-get($space, md);
+}
