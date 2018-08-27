@@ -2,7 +2,7 @@ language: node_js
 node_js:
   - "6.11.5"
 install:
-  - npm i -g yarn && yarn
+  - npm i -g yarn
 before_script:
   - yarn build
 deploy:
