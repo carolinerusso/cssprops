@@ -16,6 +16,9 @@ export class Input extends Component {
 			value: e.target.value
 		}, () => { 
 
+			//push this value to GTM
+			dataLayer.push({'inputValue': this.state.value });
+
 			//pass the state upstream
 			this.props.handleInputValue(this.state.value, 'property');
 		});
@@ -23,7 +26,7 @@ export class Input extends Component {
 
 	render(){
 		return (
-			<input className="input" placeholder={this.props.placeholder} type="text" value={this.state.value} onChange={this.handleChange} />
+			<input className="input" placeholder={this.props.placeholder} type="text" value={this.state.value} onChange={this.handleChange}  />
 		);
 	}
 }
