@@ -12,7 +12,7 @@ export class ListItem extends Component {
 	}
 
 	toggleContent(e){
-		e.preventDefault();
+		//e.preventDefault();
 
 		this.setState(prevState => ({
 		  open: !prevState.open
@@ -20,9 +20,10 @@ export class ListItem extends Component {
 	}
 
 	render(){
+		let listClass = `list-item${this.state.open ? ' active' : ''}`
 		return (
-			<li className={`list-item ${this.state.open ? 'active' : ''}`}>
-				<a className="list-item__title" onClick={this.toggleContent}>{this.props.property}</a>
+			<li id={this.props.property} className={listClass}>
+				<a href={`#${this.props.property}`} className="list-item__title" onClick={this.toggleContent}>{this.props.property}</a>
 				<ul className="list-item__content">
 				{this.props.specs.map((i, index) => 
 					<li className={`spec spec--${i.status.toLowerCase()}`} key={index.toString()}>
