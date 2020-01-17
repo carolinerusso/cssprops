@@ -17,7 +17,10 @@ export class Input extends Component {
 		}, () => { 
 
 			//push this value to GTM
-			dataLayer.push({'inputValue': this.state.value });
+			dataLayer.push({
+				'inputValue': this.state.value,
+				'event': 'input_value'
+			});
 
 			//pass the state upstream
 			this.props.handleInputValue(this.state.value, 'property');
